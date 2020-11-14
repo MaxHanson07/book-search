@@ -11,5 +11,15 @@ router.use("/api", apiRoutes);
 //   console.log(__dirname)
 // });
 
+// All other routes respond with the index.html file
+router.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../public/index.html'));
+   });
+
+// If no API routes are hit, send the React app
+// router.use(function(req, res) {
+//     res.sendFile(path.join(__dirname, "../client/build/index.html"));
+//   });
+
 
 module.exports = router;
