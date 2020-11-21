@@ -9,20 +9,20 @@ function Search() {
     const [books, setBooks] = useState([])
     const [formObject, setFormObject] = useState({})
 
-  useEffect(() => {
-    loadBooks()
-  }, [])
+    useEffect(() => {
+        loadBooks()
+    }, [])
 
-  function loadBooks() {
-    API.getBooks()
-      .then(res => 
-        setBooks(res.data)
-      )
-      .catch(err => console.log(err));
-  };
+    function loadBooks() {
+        API.getBooks()
+            .then(res =>
+                setBooks(res.data)
+            )
+            .catch(err => console.log(err));
+    };
 
-     // Handles updating component state when the user types into the input field
-     function handleInputChange(event) {
+    // Handles updating component state when the user types into the input field
+    function handleInputChange(event) {
         const { name, value } = event.target;
         setFormObject({ ...formObject, [name]: value })
     };
@@ -86,7 +86,7 @@ function Search() {
               </FormBtn>
                     </form>
                 </Col>
-                </Row>
+            </Row>
         </Container>
     );
 }
