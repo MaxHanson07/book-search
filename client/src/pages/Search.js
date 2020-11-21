@@ -32,6 +32,7 @@ function Search() {
     function handleFormSubmit(event) {
         event.preventDefault();
         if (formObject.title && formObject.author) {
+            console.log(formObject)
             API.saveBook({
                 title: formObject.title,
                 author: formObject.author,
